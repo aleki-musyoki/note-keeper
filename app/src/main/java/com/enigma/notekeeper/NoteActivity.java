@@ -125,7 +125,7 @@ public class NoteActivity extends AppCompatActivity {
         if (id == R.id.action_send_email) {
             sendEmail();
             return true;
-        }else if(id == R.id.action_cancel){
+        } else if (id == R.id.action_cancel) {
             mIsCancelling = true;
             finish();
         }
@@ -154,9 +154,8 @@ public class NoteActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        if (outState != null) {
+        if (outState != null)
             mViewModel.saveState(outState);
-        }
     }
 
     private void storePreviousNoteValues() {
@@ -177,7 +176,7 @@ public class NoteActivity extends AppCompatActivity {
         String subject = mTextNoteTitle.getText().toString();
         String text = "Checkout what I learned from the Pluralsight course \n'" +
                 course.getTitle() + "'\n" + mTextNoteText.getText();
-        Intent intent =  new Intent(Intent.ACTION_SEND);
+        Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc2822");
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, text);
