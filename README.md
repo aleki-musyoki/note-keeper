@@ -10,3 +10,6 @@ Unit Testing using the JUnit for Android apps.
 
 
 Design principles of the material design
+
+
+Use of MYSQL database to store notes in phone memory
